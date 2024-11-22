@@ -13,7 +13,7 @@ class TestHandEvaluator(unittest.TestCase):
 
         ]
         result = PokerHandEvaluator.evaluate_hand(cards)
-        expected = ("One Pair", [12, 12, 8, 2, 1])  # Pair of Aces (12), Kickers: K (11), Q (10), 10 (8)
+        expected = ("One Pair", [12, 12, 8, 2, 1])  
         self.assertEqual(result, expected)
 
     def test_two_pairs(self):
