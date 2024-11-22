@@ -3,6 +3,8 @@ from hand_evaluator import PokerHandEvaluator
 from card import Card
 
 class TestHandEvaluator(unittest.TestCase):
+    
+    #Test one pair
     def test_one_pair(self):
         cards = [
             Card("Diamonds", "A"),
@@ -15,7 +17,8 @@ class TestHandEvaluator(unittest.TestCase):
         result = PokerHandEvaluator.evaluate_hand(cards)
         expected = ("One Pair", [12, 12, 8, 2, 1])  
         self.assertEqual(result, expected)
-
+        
+    #Test two pairs
     def test_two_pairs(self):
         cards = [
             Card("Diamonds", "A"),
@@ -27,7 +30,8 @@ class TestHandEvaluator(unittest.TestCase):
         result = PokerHandEvaluator.evaluate_hand(cards)
         expected = ("Two Pair", [12, 12, 1, 1, 8])
         self.assertEqual(result, expected)
-
+        
+    #Testing three of a kind
     def test_three_pair(self):
         cards = [
             Card("Diamonds", "A"),
@@ -40,6 +44,7 @@ class TestHandEvaluator(unittest.TestCase):
         expected = ("Three of a Kind", [12, 12, 12, 8, 2])
         self.assertEqual(result, expected)
 
+    #Testing four of a kind
     def test_four_pair_four(self):
         cards = [
             Card("Diamonds", "A"),
@@ -52,6 +57,7 @@ class TestHandEvaluator(unittest.TestCase):
         expected = ("Four of a Kind", [12, 12, 12, 12, 8])
         self.assertEqual(result, expected)
 
+    #Testing full house (3 of a kind, one pair)
     def test_full_house(self):
         cards = [
             Card("Diamonds", "A"),
@@ -64,6 +70,7 @@ class TestHandEvaluator(unittest.TestCase):
         expected = ("Full House", [12, 12, 12, 2, 2])
         self.assertEqual(result, expected)
 
+    #Testing Flush(5 cards same suit)
     def test_flush(self):
         cards = [
             Card("Diamonds", "A"),
@@ -76,6 +83,7 @@ class TestHandEvaluator(unittest.TestCase):
         expected = ("Flush", [12, 10, 8, 4, 2])
         self.assertEqual(result, expected)
 
+    #Testing straight
     def test_straight(self):
         cards = [
             Card("Diamonds", "5"),
@@ -88,6 +96,7 @@ class TestHandEvaluator(unittest.TestCase):
         expected = ("Straight", [6, 5, 4, 3, 2])
         self.assertEqual(result, expected)
 
+    #Testing straight flush
     def test_straight_flush(self):
         cards = [
             Card("Spades", "J"),
@@ -100,6 +109,7 @@ class TestHandEvaluator(unittest.TestCase):
         expected = ("Straight Flush", [9, 8, 7, 6, 5])
         self.assertEqual(result, expected)
 
+    #Testing royal flush
     def test_royal_flush(self):
         cards = [
             Card("Spades", "A"),
@@ -112,6 +122,7 @@ class TestHandEvaluator(unittest.TestCase):
         expected = ("Royal Flush", [12, 11, 10, 9, 8])
         self.assertEqual(result, expected)
 
+    #Testing high card
     def test_high_card(self):
         cards = [
             Card("Spades", "2"),
