@@ -1,6 +1,6 @@
 from collections import Counter
 from itertools import combinations
-from card import Card  # Import the Card class from card.py
+from card import Card 
 
 class PokerHandEvaluator:
     hand_ranks = {
