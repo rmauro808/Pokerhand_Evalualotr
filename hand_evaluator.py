@@ -19,7 +19,7 @@ class PokerHandEvaluator:
     @staticmethod
     def evaluate_hand(cards):
         suits = [card.suit for card in cards]
-        values = [Card.values.index(card.value) for card in cards]  # This now works because Card is imported
+        values = [Card.values.index(card.value) for card in cards]
         value_counts = Counter(values)
         most_common = value_counts.most_common()
 
